@@ -26,6 +26,8 @@ namespace Debts
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IPieRepository, PieRepository>();
+            services.AddTransient<IFeedbackRepository, FeedbackRepository>();
+
             //services.AddTransient<IPieRepository, MockPieRepository>();
 
             services.AddMvc();
