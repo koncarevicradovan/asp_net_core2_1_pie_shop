@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Debts.Configuration;
 using Debts.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace Debts
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
             //services.AddTransient<IPieRepository, MockPieRepository>();
+            services.Configure<MyOptions>(Configuration);
 
             services.AddMvc();
         }
