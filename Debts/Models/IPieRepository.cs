@@ -9,5 +9,8 @@ namespace Debts.Models
     {
         IEnumerable<Pie> GetAllPies();
         Pie GetPieById(int pieId);
+        void Update(Pie pie);
+        int Delete(Pie pie);
+        int Insert(Pie pie);
     }
 }

@@ -16,6 +16,13 @@ namespace Debts.Models
             }
         }
 
+        public int Delete(Pie pie)
+        {
+            int pieId = pie.Id;
+            _pies.Remove(pie);
+            return pieId;
+        }
+
         public IEnumerable<Pie> GetAllPies()
         {
             return _pies;
@@ -24,6 +31,18 @@ namespace Debts.Models
         public Pie GetPieById(int pieId)
         {
             return _pies.First(pie => pie.Id == pieId);
+        }
+
+        public int Insert(Pie pie)
+        {
+            _pies.Add(pie);
+            return pie.Id;
+        }
+
+        public void Update(Pie pie)
+        {
+            var foundPie =_pies.First(p => p.Id == pie.Id);
+            foundPie = pie;
         }
 
         private void InitializePies()
