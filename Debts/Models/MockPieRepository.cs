@@ -41,8 +41,13 @@ namespace Debts.Models
 
         public void Update(Pie pie)
         {
-            var foundPie =_pies.First(p => p.Id == pie.Id);
-            foundPie = pie;
+            for (int i = 0; i < _pies.Count; i++)
+            {
+                if (_pies[i].Id == pie.Id)
+                {
+                    _pies[i] = pie;
+                }
+            }
         }
 
         private void InitializePies()
