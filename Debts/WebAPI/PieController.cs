@@ -22,7 +22,6 @@ namespace Debts.WebAPI
     ///     }
     ///
     /// </remarks>
-    /// <param name="item"></param>
     /// <returns>A newly created TodoItem</returns>
     /// <response code="201">Returns the newly created item</response>
     /// <response code="400">If the item is null</response>  
